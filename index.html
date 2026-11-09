@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="全球主要市场交易时段看板 — 北京时间" />
+  <title>TradingTimeTable · 全球交易时段</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <div class="hero-brand">
+        <h1 class="brand">TradingTimeTable</h1>
+        <p class="tagline">全球主要市场交易时段 · 北京时间</p>
+      </div>
+      <div class="hero-clock" aria-live="polite">
+        <div class="clock-time" id="clock-time">--:--:--</div>
+        <div class="clock-date" id="clock-date">----</div>
+        <div class="clock-tz">Asia/Shanghai</div>
+      </div>
+    </header>
+
+    <div id="year-banner" class="year-banner" hidden>
+      当前日期不在日历年份 <span id="banner-year"></span> 范围内，节假日数据可能不准。
+    </div>
+
+    <section class="legend" aria-label="状态图例">
+      <span class="chip chip-open">交易中</span>
+      <span class="chip chip-lunch">午间休市</span>
+      <span class="chip chip-pre">盘前</span>
+      <span class="chip chip-post">盘后</span>
+      <span class="chip chip-overnight">隔夜休市</span>
+      <span class="chip chip-weekend">周末休市</span>
+      <span class="chip chip-holiday">休市（节假日）</span>
+    </section>
+
+    <main id="markets" class="markets" aria-live="polite"></main>
+
+    <footer class="footer">
+      <p class="sources" id="sources">
+        行情：东方财富 · Binance Vision　日历：SSE / HKEX / JPX / KRX / NYSE
+      </p>
+      <p class="disclaimer">本页面不构成任何投资建议</p>
+    </footer>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
